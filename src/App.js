@@ -1,18 +1,28 @@
 
 import './App.css';
+import {useEffect, useState} from 'react' ; 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-     <h1>The evolution of <br></br>Airnabs Frontend</h1>
-      
-
-      <h4>@spikebrehm</h4>
-      < img src = "https://imjustcreative.com/wp-content/uploads/2014/07/airbnb-logo-design-by-wearedesignstudio.png" height ="60" width="100"></img>
-      </header>
+  const [color, setcolor] = useState("white");
+  
+  const click = color => {
+    setcolor(color)
+  }
+  useEffect(()=>{
+  document.body.style.backgroundColor = color
+  },[color]
+  )
+ 
+  return(
+    <div className='App'>
+      <h1>overrected</h1>
+      <button onClick={
+    () => {click(" #282c34")}}
+   >toggle</button>
+  <h1 style={{color : "pink"}}>THE  WET CODEBASE</h1>
+  <h1 style={{color : "pink"}}>Good bye clean code</h1>
+  <h1 style={{color : "pink"}}>My decade in review</h1>
     </div>
   );
-}
-
+};
 export default App;
